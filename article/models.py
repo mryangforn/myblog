@@ -13,15 +13,15 @@ class ArticleTag(models.Model):
         return self.tag
 
     class Meta:
-        verbose_name = '博文分类'
-        verbose_name_plural = '博文分类'
+        verbose_name = '分析结果分类'
+        verbose_name_plural = '分析结果分类'
 
 
 class ArticleInfo(models.Model):
     author = models.ForeignKey(MyUser, on_delete=models.CASCADE, verbose_name='用户')
     title = models.CharField('标题', max_length=200)
-    content = RichTextUploadingField(verbose_name='内容')
-    articlephoto = models.ImageField('文章图片', blank=True, upload_to='images/article/')
+    content = RichTextUploadingField(verbose_name='分析结果内容')
+    articlephoto = models.ImageField('分析结果图片', blank=True, upload_to='images/article/')
     reading = models.IntegerField('阅读量', default=0)
     liking = models.IntegerField('点赞量', default=0)
     created = models.DateTimeField('创建时间', default=timezone.now)
@@ -32,12 +32,12 @@ class ArticleInfo(models.Model):
         return self.title
 
     class Meta:
-        verbose_name = '博文管理'
-        verbose_name_plural = '博文管理'
+        verbose_name = '分析结果管理'
+        verbose_name_plural = '分析结果管理'
 
 
 class Comment(models.Model):
-    article = models.ForeignKey(ArticleInfo, on_delete=models.CASCADE, verbose_name='所属文章')
+    article = models.ForeignKey(ArticleInfo, on_delete=models.CASCADE, verbose_name='所属分析结果')
     commentator = models.CharField('评论用户', max_length=90)
     content = models.TextField('评论内容')
     created = models.DateTimeField('创建时间', auto_now_add=True)

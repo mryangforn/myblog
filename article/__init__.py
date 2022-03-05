@@ -11,4 +11,4 @@ def get_current_app_name(_file):
 # 重写类IndexConfig
 class IndexConfig(AppConfig):
     name = get_current_app_name(__file__)
-    verbose_name = '博客管理'
+    verbose_name = '沙盘分析结果管理'

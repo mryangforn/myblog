@@ -2,35 +2,35 @@
 <head>
 {% load static %}
 <title>{% block title %}我的博客{% endblock %}</title>
-<link href="{% static "css/base.css" %}" rel="stylesheet">
-<link href="{% static "css/index.css" %}" rel="stylesheet">
-<link href="{% static "css/m.css" %}" rel="stylesheet">
-<link href="{% static "css/info.css" %}" rel="stylesheet">
-<script src="{% static "js/jquery.min.js" %}"></script>
-<script src="{% static "js/comm.js" %}"></script>
-<script src="{% static "js/modernizr.js" %}"></script>
-<script src="{% static "js/scrollReveal.js" %}"></script>
+<link href="{% static 'css/base.css' %}" rel="stylesheet">
+<link href="{% static 'css/index.css' %}" rel="stylesheet">
+<link href="{% static 'css/m.css' %}" rel="stylesheet">
+<link href="{% static 'css/info.css' %}" rel="stylesheet">
+<script src="{% static 'js/jquery.min.js' %}"></script>
+<script src="{% static 'js/comm.js' %}"></script>
+<script src="{% static 'js/modernizr.js' %}"></script>
+<script src="{% static 'js/scrollReveal.js' %}"></script>
 </head>
 
 <body>
-<header class="header-navigation" id="header">
-  <nav><div class="logo"><a href="javascript:;">博客首页</a></div>
+<header class="header-navigation" id="header" style="border-radius: 15px;box-shadow:0px 2px 2px grey;">
+  <nav><div class="logo"><a href="javascript:;">城市道路规划系统</a></div>
     <h2 id="mnavh"><span class="navicon"></span></h2>
     <ul id="starlist">
-      <li><a href="{% url 'article' id 1%}">我的日记</a></li>
-      <li><a href="{% url 'album' id 1 %}">我的相册</a></li>
-      <li><a href="{% url 'about' id %}">关于我</a></li>
-      <li><a href="{% url 'board' id 1 %}">留言</a></li>
-      <li><a href="{% url 'admin:index' %}">博客后台管理</a></li>
+      <li><a href="{% url 'article' id 1%}">沙盘扫描分析</a></li>
+      <li><a href="{% url 'album' id 1 %}">历史扫描图片</a></li>
+      <li><a href="{% url 'about' id %}">沙盘状态</a></li>
+      <li><a href="{% url 'board' id 1 %}">结果反馈</a></li>
+      <li><a href="{% url 'admin:index' %}">系统后台管理</a></li>
     </ul>
   </nav>
 </header>
 
 {% block body %}
 <article>
-  <aside class="l_box">
-      <div class="about_me">
-        <h2>关于我</h2>
+  <aside class="l_box" >
+      <div class="about_me" style="border-radius: 15px;box-shadow:0px 2px 2px grey;" >
+        <h2>用户</h2>
         <ul>
           {% if user.photo %}
             <i><img src="{{ user.photo.url }}"></i>
@@ -40,35 +40,35 @@
           <p><b>{{ user.name }}</b>，{{ user.introduce }}</p>
         </ul>
       </div>
-      <div class="wdxc">
-        <h2>我的相册</h2>
+      <div class="wdxc" style="border-radius: 15px;box-shadow:0px 2px 2px grey;">
+        <h2>扫描图片</h2>
         <ul>
           {% for a in album %}
           <li><a href="javascript:;"><img src="{{ a.photo.url }}"></a></li>
           {% endfor %}
         </ul>
       </div>
-      <div class="fenlei">
-        <h2>文章分类</h2>
+      <div class="fenlei" style="border-radius: 15px;box-shadow:0px 2px 2px grey;">
+        <h2>扫描结果分类</h2>
         <ul>
           {% for t in tag %}
           <li><a href="/">{{ t.tag }}</a></li>
           {% endfor %}
         </ul>
       </div>
-      <div class="tuijian">
-        <h2>站长推荐</h2>
+      <div class="tuijian" style="border-radius: 15px;box-shadow:0px 2px 2px grey;">
+        <h2>数据可视化平台</h2>
         <ul>
-          <li><a href="https://gitbook.cn/gitchat/author/5b28bff00ac95342c847f199" target="new">个人专题</a></li>
-          <li><a href="https://item.jd.com/12460562.html" target="new">玩转django2.0-京东</a></li>
-          <li><a href="http://product.dangdang.com/25535043.html" target="new">玩转django2.0-当当网</a></li>
+          <li><a href="https://open.iot.10086.cn/view/main/index.html#/share2d?id=617cd3166ac1a70040074b57" target="new">智能城市沙盘数据可视化平台</a></li>
+<!--          <li><a href="https://item.jd.com/12460562.html" target="new">玩转django2.0-京东</a></li>-->
+<!--          <li><a href="http://product.dangdang.com/25535043.html" target="new">玩转django2.0-当当网</a></li>-->
         </ul>
       </div>
-      <div class="links">
-        <h2>友情链接</h2>
+      <div class="links" style="border-radius: 15px;box-shadow:0px 2px 2px grey;">
+        <h2>相关链接</h2>
         <ul>
-          <a href="https://blog.csdn.net/HuangZhang_123" target="new">CSDN博客</a>
-          <a href="https://book.jd.com/writer/%E9%BB%84%E6%B0%B8%E7%A5%A5_1.html" target="new">出版图书</a>
+          <a href="https://zhuanlan.zhihu.com/p/31952659" target="new">沉浸式城市沙盘体验案例</a>
+          <a href="https://new.qq.com/omn/20220301/20220301A0A6CH00.html" target="new">5D数字化城市沙盘、城市实验室，焕新的上海城市规划展示馆</a>
         </ul>
       </div>
   </aside>

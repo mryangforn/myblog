@@ -7,9 +7,9 @@
         <h3 class="news_title">{{ ats.title }}</h3>
         <div class="bloginfo">
             <ul>
-                <li class="author">作者：<a href="javascript:;">{{ user.name }}</a></li>
+                <li class="author">扫描人员：<a href="javascript:;">{{ user.name }}</a></li>
                 <li class="timer">时间：{{ ats.created|date:"Y-m-d" }}</li>
-                <li class="view">阅读量：{{ ats.reading }}</li>
+                <li class="view">结果分析阅读量：{{ ats.reading }}</li>
             </ul>
         </div>
 
@@ -25,7 +25,7 @@
     </div>
 
     <div class="news_pl">
-    <h2>文章评论</h2>
+    <h2>分析结果评论</h2>
     <div class="gbko">
         {% for c in cms %}
             <div class="fb">

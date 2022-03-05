@@ -13,5 +13,5 @@ class AlbumInfo(models.Model):
         return str(self.id)
 
     class Meta:
-        verbose_name = '图片墙管理'
-        verbose_name_plural = '图片墙管理'
+        verbose_name = '分析结果图片管理'
+        verbose_name_plural = '分析结果图片管理'

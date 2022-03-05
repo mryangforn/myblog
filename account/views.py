@@ -8,7 +8,7 @@ from album.models import AlbumInfo
 from article.models import ArticleTag
 
 def register(request):
-    title = '注册博客'
+    title = '道路规划系统管理平台'
     pageTitle = '用户注册'
     confirmPassword = True
     button = '注册'
@@ -36,7 +36,7 @@ def register(request):
 
 
 def userLogin(request):
-    title = '登录博客'
+    title = '道路规划系统管理平台'
     pageTitle = '用户登录'
     button = '登录'
     urlText = '用户注册'

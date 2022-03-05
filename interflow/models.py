@@ -15,5 +15,5 @@ class Board(models.Model):
         return self.email
 
     class Meta:
-        verbose_name = '博客留言'
-        verbose_name_plural = '博客留言'
+        verbose_name = '分析结果留言'
+        verbose_name_plural = '分析结果留言'
